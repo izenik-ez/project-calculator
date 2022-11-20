@@ -71,7 +71,6 @@ let app = function (){
                 calculator.operand = +mantisa.innerHTML;
                 mantisa.innerHTML = 0;
             }else{
-                console.log(calculator.toString());
                 calculator.operand = calculator.calculate(+mantisa.innerHTML);
                 mantisa.innerHTML= calculator.operand;
             }
