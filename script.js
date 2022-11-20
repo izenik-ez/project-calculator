@@ -57,7 +57,8 @@ let app = function (){
         operands[i].addEventListener("click", (e) => {
             if(calculator.newNumber){
                 mantisa.innerHTML = e.target.value;
-                calculator.newNumber = null;
+                if(mantisa.innerHTML !== "0")
+                    calculator.newNumber = null;
             }else{
                 mantisa.innerHTML = mantisa.innerHTML + e.target.value;
             }
