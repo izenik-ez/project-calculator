@@ -25,23 +25,18 @@ html{
     align-items: center;
     font-size: 40px;
     overflow: hidden;
+    padding: 5px;
 }
 
 .buttons{
-    width: 400px;
+    width: 410px;
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(4, 90px);
     grid-template-rows: auto;
     justify-content: space-between;
 }
-/* .buttons{ */
-/*     width: 400px; */
-/*     display: flex; */
-/*     flex-wrap: wrap; */
-/*     justify-content: space-between; */
-/*     /\*margin-left: 10px;*\/ */
-/* } */
+
 
 button{
     width: 95px;

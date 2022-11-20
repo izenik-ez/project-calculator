@@ -25,7 +25,7 @@ let calculator = {
             this.operand = this.operand * number;
             break;
         case "/":
-            this.operand = this.operand / number;
+            this.operand = number===0 ? "No Way" : this.operand / number;
             break;        
         }
         return this.convertToExponential(this.operand);
@@ -70,7 +70,8 @@ let app = function (){
             if(calculator.operator === ""){
                 calculator.operand = +mantisa.innerHTML;
                 mantisa.innerHTML = 0;
-            }else{                
+            }else{
+                console.log(calculator.toString());
                 calculator.operand = calculator.calculate(+mantisa.innerHTML);
                 mantisa.innerHTML= calculator.operand;
             }
@@ -102,7 +103,11 @@ let app = function (){
         calculator.operand = 0;
         calculator.operator = "";
         calculator.newNumber = true;
-    });   
+    });
+    let decimal = document.querySelector(".decimal");
+    decimal.addEventListener("click", (e) =>{
+        mantisa.innerHTML = mantisa.innerHTML + ".";
+    });
 }
 
 window.onload = function() {app();}
