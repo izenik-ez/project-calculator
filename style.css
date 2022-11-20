@@ -24,6 +24,7 @@ html{
     justify-content: flex-end;
     align-items: center;
     font-size: 40px;
+    overflow: hidden;
 }
 .buttons{
     width: 400px;

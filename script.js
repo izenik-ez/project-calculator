@@ -28,7 +28,14 @@ let calculator = {
             this.operand = this.operand / number;
             break;        
         }
-        return this.operand;
+        return this.convertToExponential(this.operand);
+    },
+    convertToExponential (number){
+        if(number.toString().length >= 15){
+            return number.toExponential(10);
+        }else{
+            return number;
+        }
     },
     toString: function (){
         return "Operand: " + this.operand +
@@ -60,15 +67,11 @@ let app = function (){
     operators.forEach((op) => {
         op.addEventListener("click", (e) => {
             if(calculator.operator === ""){
-                //calculator.operator = e.target.value;
                 calculator.operand = +mantisa.innerHTML;
                 mantisa.innerHTML = 0;
-               // calculator.newNumber = true;
             }else{                
                 calculator.operand = calculator.calculate(+mantisa.innerHTML);
-  //              calculator.operator = e.target.value;
                 mantisa.innerHTML= calculator.operand;
-//                calculator.newNumber = true;
             }
             calculator.operator = e.target.value;
             calculator.newNumber = true;
